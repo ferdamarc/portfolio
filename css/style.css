@@ -318,6 +318,35 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 /* ============================================================
+   EXPERIÊNCIA (linha do tempo)
+   ============================================================ */
+.timeline { max-width: 760px; }
+.timeline-item {
+  position: relative;
+  padding-left: 28px;
+  padding-bottom: 30px;
+  border-left: 2px solid var(--border);
+}
+.timeline-item:last-child { border-left-color: transparent; padding-bottom: 0; }
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -8px; top: 3px;
+  width: 13px; height: 13px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid var(--bg);
+}
+.timeline-period {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--accent);
+}
+.timeline-role { font-family: var(--font-display); font-size: 1.08rem; margin: 4px 0 2px; }
+.timeline-org { font-size: 0.9rem; color: var(--ink-muted); margin-bottom: 8px; }
+.timeline-item p:last-child { font-size: 0.92rem; color: var(--ink-muted); }
+
+/* ============================================================
    PROJETOS
    ============================================================ */
 /* Barra de filtro por categoria */
@@ -410,6 +439,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   color: var(--ink-muted);
   margin: 2px 0 0;
 }
+
+.project-desc { font-size: 0.9rem; color: var(--ink-muted); margin-bottom: 14px; }
 
 .project-links { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 14px; }
 .project-links a {
