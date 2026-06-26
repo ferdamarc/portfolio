@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seu Nome — Portfólio</title>
+  <meta name="description" content="Portfólio de Seu Nome, desenvolvedor(a) front-end em formação.">
+
+  <!-- Google Fonts: display (Space Grotesk), corpo (Inter) e mono (JetBrains Mono) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Ícones (Lucide via CDN, gratuito) -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER / NAVEGAÇÃO ===================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#inicio" class="logo">seu<span>nome</span><span class="cursor">_</span></a>
+
+      <nav class="nav" id="nav">
+        <a href="#inicio" class="nav-link active">Início</a>
+        <a href="#sobre" class="nav-link">Sobre</a>
+        <a href="#projetos" class="nav-link">Projetos</a>
+        <a href="#habilidades" class="nav-link">Habilidades</a>
+        <a href="#contato" class="nav-link">Contato</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema claro/escuro">
+          <i data-lucide="sun" class="icon icon-sun"></i>
+          <i data-lucide="moon" class="icon icon-moon"></i>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+          <i data-lucide="menu" class="icon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="inicio">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <span class="tag">// inicio.js</span>
+          <p class="hero-greeting">Olá, eu sou</p>
+          <h1 class="hero-name">Seu Nome</h1>
+          <p class="hero-role">Desenvolvedor(a) Front-end <span class="status-dot" aria-hidden="true"></span> em formação</p>
+          <p class="hero-pitch">
+            Estou construindo este portfólio enquanto aprendo HTML, CSS e JavaScript na prática.
+            Cada seção aqui é um exercício — sinta-se livre para abrir o código e ver como foi feito.
+          </p>
+          <div class="hero-actions">
+            <a href="#projetos" class="btn btn-primary">Ver projetos</a>
+            <a href="#contato" class="btn btn-ghost">Fale comigo</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="avatar-placeholder">
+            <span>SN</span>
+          </div>
+          <div class="floating-card card-1">&lt;/&gt; código limpo</div>
+          <div class="floating-card card-2">100% responsivo</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SOBRE ===================== -->
+    <section class="section" id="sobre">
+      <div class="container">
+        <span class="tag">// sobre.js</span>
+        <h2 class="section-title">Sobre mim</h2>
+
+        <div class="about-grid">
+          <p class="about-text">
+            Substitua este texto pela sua história: como começou a programar, o que te motiva e
+            o que você está estudando agora. Recrutadores e clientes gostam de contexto — fale
+            sobre seus objetivos e o tipo de projeto que você quer construir a seguir.
+          </p>
+
+          <ul class="about-facts">
+            <li><i data-lucide="map-pin" class="icon-sm"></i> Sua cidade, Brasil</li>
+            <li><i data-lucide="graduation-cap" class="icon-sm"></i> Aprendendo HTML, CSS e JavaScript</li>
+            <li><i data-lucide="target" class="icon-sm"></i> Objetivo: primeira oportunidade como dev</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJETOS ===================== -->
+    <section class="section section-alt" id="projetos">
+      <div class="container">
+        <span class="tag">// projetos.js</span>
+        <h2 class="section-title">Projetos</h2>
+        <p class="section-subtitle">Alguns trabalhos enquanto pratico. Troque pelos seus assim que tiver.</p>
+
+        <div class="projects-grid">
+
+          <article class="project-card">
+            <div class="project-thumb thumb-1" aria-hidden="true"><i data-lucide="layout-template"></i></div>
+            <div class="project-body">
+              <h3>Nome do Projeto 1</h3>
+              <p>Breve descrição do que o projeto faz e qual problema ele resolve.</p>
+              <div class="tags">
+                <span class="pill">HTML</span>
+                <span class="pill">CSS</span>
+                <span class="pill">JavaScript</span>
+              </div>
+              <div class="project-links">
+                <a href="#" target="_blank" rel="noopener">Código</a>
+                <a href="#" target="_blank" rel="noopener">Demo ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-thumb thumb-2" aria-hidden="true"><i data-lucide="check-square"></i></div>
+            <div class="project-body">
+              <h3>Nome do Projeto 2</h3>
+              <p>Breve descrição do que o projeto faz e qual problema ele resolve.</p>
+              <div class="tags">
+                <span class="pill">JavaScript</span>
+                <span class="pill">API</span>
+              </div>
+              <div class="project-links">
+                <a href="#" target="_blank" rel="noopener">Código</a>
+                <a href="#" target="_blank" rel="noopener">Demo ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-thumb thumb-3" aria-hidden="true"><i data-lucide="gamepad-2"></i></div>
+            <div class="project-body">
+              <h3>Nome do Projeto 3</h3>
+              <p>Breve descrição do que o projeto faz e qual problema ele resolve.</p>
+              <div class="tags">
+                <span class="pill">CSS</span>
+                <span class="pill">Animação</span>
+              </div>
+              <div class="project-links">
+                <a href="#" target="_blank" rel="noopener">Código</a>
+                <a href="#" target="_blank" rel="noopener">Demo ↗</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== HABILIDADES ===================== -->
+    <section class="section" id="habilidades">
+      <div class="container">
+        <span class="tag">// habilidades.js</span>
+        <h2 class="section-title">Habilidades</h2>
+
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3>Front-end</h3>
+            <div class="tags">
+              <span class="pill pill-skill">HTML5</span>
+              <span class="pill pill-skill">CSS3</span>
+              <span class="pill pill-skill">JavaScript</span>
+              <span class="pill pill-skill">Flexbox</span>
+              <span class="pill pill-skill">Grid</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3>Ferramentas</h3>
+            <div class="tags">
+              <span class="pill pill-skill">Git</span>
+              <span class="pill pill-skill">GitHub</span>
+              <span class="pill pill-skill">VS Code</span>
+              <span class="pill pill-skill">Figma</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3>Estudando agora</h3>
+            <div class="tags">
+              <span class="pill pill-skill pill-learning">Vite</span>
+              <span class="pill pill-skill pill-learning">React</span>
+              <span class="pill pill-skill pill-learning">Acessibilidade</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTATO ===================== -->
+    <section class="section section-alt" id="contato">
+      <div class="container contact-grid">
+        <div class="contact-info">
+          <span class="tag">// contato.js</span>
+          <h2 class="section-title">Vamos conversar</h2>
+          <p>Aberto(a) a oportunidades, parcerias em projetos ou só trocar uma ideia sobre código.</p>
+
+          <ul class="contact-links">
+            <li><a href="mailto:seuemail@exemplo.com"><i data-lucide="mail" class="icon-sm"></i> seuemail@exemplo.com</a></li>
+            <li><a href="#" target="_blank" rel="noopener"><i data-lucide="github" class="icon-sm"></i> github.com/seu-usuario</a></li>
+            <li><a href="#" target="_blank" rel="noopener"><i data-lucide="linkedin" class="icon-sm"></i> linkedin.com/in/seu-usuario</a></li>
+          </ul>
+        </div>
+
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/SEU_ID_AQUI" method="POST">
+          <div class="form-row">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-row">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-row">
+            <label for="message">Mensagem</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Enviar mensagem</button>
+          <p class="form-feedback" id="formFeedback" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Seu Nome. Construído estudando HTML, CSS e JS.</p>
+      <a href="#inicio" class="back-to-top" aria-label="Voltar ao topo"><i data-lucide="arrow-up" class="icon-sm"></i></a>
+    </div>
+  </footer>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
