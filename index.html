@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Seu Nome — Portfólio</title>
-  <meta name="description" content="Portfólio de Seu Nome, desenvolvedor(a) front-end em formação.">
+  <title>Seu Nome — Cientista de Dados</title>
+  <meta name="description" content="Portfólio de Seu Nome, Cientista de Dados — Python, Machine Learning, SQL e visualização de dados.">
 
   <!-- Google Fonts: display (Space Grotesk), corpo (Inter) e mono (JetBrains Mono) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,106 +48,175 @@
     <section class="hero" id="inicio">
       <div class="container hero-inner">
         <div class="hero-text">
-          <span class="tag">// inicio.js</span>
+          <span class="tag"># inicio.py</span>
           <p class="hero-greeting">Olá, eu sou</p>
           <h1 class="hero-name">Seu Nome</h1>
-          <p class="hero-role">Desenvolvedor(a) Front-end <span class="status-dot" aria-hidden="true"></span> em formação</p>
+          <p class="hero-role">Cientista de Dados <span class="status-dot" aria-hidden="true"></span> Python · Machine Learning · SQL</p>
           <p class="hero-pitch">
-            Estou construindo este portfólio enquanto aprendo HTML, CSS e JavaScript na prática.
-            Cada seção aqui é um exercício — sinta-se livre para abrir o código e ver como foi feito.
+            Transformo dados em decisões: da limpeza e análise exploratória até modelos de
+            machine learning em produção. Cada projeto abaixo é um estudo de caso real —
+            com o problema, os dados, o método e o resultado.
           </p>
+
           <div class="hero-actions">
             <a href="#projetos" class="btn btn-primary">Ver projetos</a>
-            <a href="#contato" class="btn btn-ghost">Fale comigo</a>
+            <a href="assets/cv-seu-nome.pdf" class="btn btn-ghost" download>
+              <i data-lucide="download" class="icon-sm"></i> Baixar CV
+            </a>
           </div>
+
+          <!-- Links de credibilidade (troque pelas suas URLs) -->
+          <ul class="hero-socials">
+            <li><a href="https://github.com/seu-usuario" target="_blank" rel="noopener" aria-label="GitHub"><i data-lucide="github" class="icon-sm"></i> GitHub</a></li>
+            <li><a href="https://kaggle.com/seu-usuario" target="_blank" rel="noopener" aria-label="Kaggle"><i data-lucide="bar-chart-3" class="icon-sm"></i> Kaggle</a></li>
+            <li><a href="https://linkedin.com/in/seu-usuario" target="_blank" rel="noopener" aria-label="LinkedIn"><i data-lucide="linkedin" class="icon-sm"></i> LinkedIn</a></li>
+          </ul>
         </div>
 
         <div class="hero-visual" aria-hidden="true">
           <div class="avatar-placeholder">
             <span>SN</span>
           </div>
-          <div class="floating-card card-1">&lt;/&gt; código limpo</div>
-          <div class="floating-card card-2">100% responsivo</div>
+          <div class="floating-card card-1">import pandas as pd</div>
+          <div class="floating-card card-2">model.fit(X, y)</div>
         </div>
+      </div>
+    </section>
+
+    <!-- ===================== MÉTRICAS (contadores animados) ===================== -->
+    <section class="stats-band" aria-label="Resumo em números">
+      <div class="container stats-grid">
+        <div class="stat"><span class="stat-num" data-count="12">0</span><span class="stat-label">Projetos concluídos</span></div>
+        <div class="stat"><span class="stat-num" data-count="30">0</span><span class="stat-label">Notebooks publicados</span></div>
+        <div class="stat"><span class="stat-num" data-count="8">0</span><span class="stat-label">Modelos treinados</span></div>
+        <div class="stat"><span class="stat-num" data-count="5" data-suffix="+">0</span><span class="stat-label">Datasets analisados</span></div>
       </div>
     </section>
 
     <!-- ===================== SOBRE ===================== -->
     <section class="section" id="sobre">
       <div class="container">
-        <span class="tag">// sobre.js</span>
+        <span class="tag"># sobre.py</span>
         <h2 class="section-title">Sobre mim</h2>
 
         <div class="about-grid">
           <p class="about-text">
-            Substitua este texto pela sua história: como começou a programar, o que te motiva e
-            o que você está estudando agora. Recrutadores e clientes gostam de contexto — fale
-            sobre seus objetivos e o tipo de projeto que você quer construir a seguir.
+            Substitua este texto pela sua história em dados: o que te levou à ciência de dados,
+            o domínio de negócio em que você atua (saúde, finanças, varejo…) e o tipo de problema
+            que gosta de resolver. Recrutadores valorizam contexto — fale de objetivos e de como
+            você conecta análise técnica a impacto real.
           </p>
 
           <ul class="about-facts">
             <li><i data-lucide="map-pin" class="icon-sm"></i> Sua cidade, Brasil</li>
-            <li><i data-lucide="graduation-cap" class="icon-sm"></i> Aprendendo HTML, CSS e JavaScript</li>
-            <li><i data-lucide="target" class="icon-sm"></i> Objetivo: primeira oportunidade como dev</li>
+            <li><i data-lucide="graduation-cap" class="icon-sm"></i> Formação / área de domínio</li>
+            <li><i data-lucide="target" class="icon-sm"></i> Foco: ML, análise e dados em produção</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- ===================== PROJETOS ===================== -->
+    <!-- ===================== PROJETOS (estudos de caso) ===================== -->
     <section class="section section-alt" id="projetos">
       <div class="container">
-        <span class="tag">// projetos.js</span>
+        <span class="tag"># projetos.py</span>
         <h2 class="section-title">Projetos</h2>
-        <p class="section-subtitle">Alguns trabalhos enquanto pratico. Troque pelos seus assim que tiver.</p>
+        <p class="section-subtitle">Estudos de caso reais. Cada cartão mostra problema, dados, método e resultado.</p>
+
+        <!-- Filtro por categoria (controlado via JS) -->
+        <div class="filter-bar" role="group" aria-label="Filtrar projetos por categoria">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="ml">Machine Learning</button>
+          <button class="filter-btn" data-filter="analise">Análise</button>
+          <button class="filter-btn" data-filter="nlp">NLP</button>
+          <button class="filter-btn" data-filter="dashboard">Dashboard</button>
+        </div>
 
         <div class="projects-grid">
 
-          <article class="project-card">
-            <div class="project-thumb thumb-1" aria-hidden="true"><i data-lucide="layout-template"></i></div>
+          <!-- PROJETO 1 -->
+          <article class="project-card" data-category="ml">
+            <div class="project-thumb thumb-1">
+              <!-- Troque por um gráfico real do projeto: <img src="assets/proj-1.png" alt="..."> -->
+              <i data-lucide="git-branch"></i>
+            </div>
             <div class="project-body">
-              <h3>Nome do Projeto 1</h3>
-              <p>Breve descrição do que o projeto faz e qual problema ele resolve.</p>
+              <div class="project-metrics">
+                <span class="metric-badge"><i data-lucide="target" class="icon-xs"></i> Acurácia 92%</span>
+                <span class="metric-badge metric-warm">−30% churn</span>
+              </div>
+              <h3>Previsão de Churn</h3>
+              <dl class="case-study">
+                <dt>Problema</dt><dd>Identificar clientes com alto risco de cancelamento.</dd>
+                <dt>Dados</dt><dd>50k registros de assinaturas (CSV, 2 anos).</dd>
+                <dt>Método</dt><dd>EDA, feature engineering e Gradient Boosting.</dd>
+                <dt>Resultado</dt><dd>Modelo com 92% de acurácia; ação reduziu churn em 30%.</dd>
+              </dl>
               <div class="tags">
-                <span class="pill">HTML</span>
-                <span class="pill">CSS</span>
-                <span class="pill">JavaScript</span>
+                <span class="pill">Python</span>
+                <span class="pill">scikit-learn</span>
+                <span class="pill">pandas</span>
               </div>
               <div class="project-links">
-                <a href="#" target="_blank" rel="noopener">Código</a>
-                <a href="#" target="_blank" rel="noopener">Demo ↗</a>
+                <a href="#" target="_blank" rel="noopener"><i data-lucide="github" class="icon-xs"></i> Código</a>
+                <a href="#" target="_blank" rel="noopener"><i data-lucide="book-open" class="icon-xs"></i> Notebook</a>
+                <a href="#" target="_blank" rel="noopener"><i data-lucide="external-link" class="icon-xs"></i> Demo</a>
               </div>
             </div>
           </article>
 
-          <article class="project-card">
-            <div class="project-thumb thumb-2" aria-hidden="true"><i data-lucide="check-square"></i></div>
+          <!-- PROJETO 2 -->
+          <article class="project-card" data-category="dashboard analise">
+            <div class="project-thumb thumb-2">
+              <i data-lucide="layout-dashboard"></i>
+            </div>
             <div class="project-body">
-              <h3>Nome do Projeto 2</h3>
-              <p>Breve descrição do que o projeto faz e qual problema ele resolve.</p>
+              <div class="project-metrics">
+                <span class="metric-badge"><i data-lucide="users" class="icon-xs"></i> 8 KPIs</span>
+              </div>
+              <h3>Dashboard de Vendas</h3>
+              <dl class="case-study">
+                <dt>Problema</dt><dd>Time comercial sem visão consolidada de performance.</dd>
+                <dt>Dados</dt><dd>Banco transacional (SQL) com 200k pedidos.</dd>
+                <dt>Método</dt><dd>Consultas SQL, modelagem e dashboard interativo.</dd>
+                <dt>Resultado</dt><dd>Painel com 8 KPIs e atualização diária automática.</dd>
+              </dl>
               <div class="tags">
-                <span class="pill">JavaScript</span>
-                <span class="pill">API</span>
+                <span class="pill">SQL</span>
+                <span class="pill">Power BI</span>
+                <span class="pill">Plotly</span>
               </div>
               <div class="project-links">
-                <a href="#" target="_blank" rel="noopener">Código</a>
-                <a href="#" target="_blank" rel="noopener">Demo ↗</a>
+                <a href="#" target="_blank" rel="noopener"><i data-lucide="github" class="icon-xs"></i> Código</a>
+                <a href="#" target="_blank" rel="noopener"><i data-lucide="external-link" class="icon-xs"></i> Dashboard</a>
               </div>
             </div>
           </article>
 
-          <article class="project-card">
-            <div class="project-thumb thumb-3" aria-hidden="true"><i data-lucide="gamepad-2"></i></div>
+          <!-- PROJETO 3 -->
+          <article class="project-card" data-category="nlp">
+            <div class="project-thumb thumb-3">
+              <i data-lucide="message-square-text"></i>
+            </div>
             <div class="project-body">
-              <h3>Nome do Projeto 3</h3>
-              <p>Breve descrição do que o projeto faz e qual problema ele resolve.</p>
+              <div class="project-metrics">
+                <span class="metric-badge"><i data-lucide="target" class="icon-xs"></i> F1 0.88</span>
+              </div>
+              <h3>Análise de Sentimentos</h3>
+              <dl class="case-study">
+                <dt>Problema</dt><dd>Classificar avaliações de produtos em positivas/negativas.</dd>
+                <dt>Dados</dt><dd>30k reviews em português (web scraping).</dd>
+                <dt>Método</dt><dd>Limpeza de texto, TF-IDF e modelo de classificação.</dd>
+                <dt>Resultado</dt><dd>F1-score de 0.88; pipeline reutilizável.</dd>
+              </dl>
               <div class="tags">
-                <span class="pill">CSS</span>
-                <span class="pill">Animação</span>
+                <span class="pill">Python</span>
+                <span class="pill">NLTK</span>
+                <span class="pill">spaCy</span>
               </div>
               <div class="project-links">
-                <a href="#" target="_blank" rel="noopener">Código</a>
-                <a href="#" target="_blank" rel="noopener">Demo ↗</a>
+                <a href="#" target="_blank" rel="noopener"><i data-lucide="github" class="icon-xs"></i> Código</a>
+                <a href="#" target="_blank" rel="noopener"><i data-lucide="book-open" class="icon-xs"></i> Notebook</a>
               </div>
             </div>
           </article>
@@ -159,40 +228,64 @@
     <!-- ===================== HABILIDADES ===================== -->
     <section class="section" id="habilidades">
       <div class="container">
-        <span class="tag">// habilidades.js</span>
+        <span class="tag"># habilidades.py</span>
         <h2 class="section-title">Habilidades</h2>
 
         <div class="skills-grid">
           <div class="skill-group">
-            <h3>Front-end</h3>
+            <h3>Linguagens</h3>
             <div class="tags">
-              <span class="pill pill-skill">HTML5</span>
-              <span class="pill pill-skill">CSS3</span>
-              <span class="pill pill-skill">JavaScript</span>
-              <span class="pill pill-skill">Flexbox</span>
-              <span class="pill pill-skill">Grid</span>
+              <span class="pill pill-skill">Python</span>
+              <span class="pill pill-skill">SQL</span>
+              <span class="pill pill-skill">R</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3>Bibliotecas &amp; ML</h3>
+            <div class="tags">
+              <span class="pill pill-skill">pandas</span>
+              <span class="pill pill-skill">NumPy</span>
+              <span class="pill pill-skill">scikit-learn</span>
+              <span class="pill pill-skill">Matplotlib</span>
+              <span class="pill pill-skill">Seaborn</span>
             </div>
           </div>
 
           <div class="skill-group">
             <h3>Ferramentas</h3>
             <div class="tags">
+              <span class="pill pill-skill">Jupyter</span>
               <span class="pill pill-skill">Git</span>
-              <span class="pill pill-skill">GitHub</span>
-              <span class="pill pill-skill">VS Code</span>
-              <span class="pill pill-skill">Figma</span>
+              <span class="pill pill-skill">Power BI</span>
+              <span class="pill pill-skill">Docker</span>
             </div>
           </div>
 
           <div class="skill-group">
             <h3>Estudando agora</h3>
             <div class="tags">
-              <span class="pill pill-skill pill-learning">Vite</span>
-              <span class="pill pill-skill pill-learning">React</span>
-              <span class="pill pill-skill pill-learning">Acessibilidade</span>
+              <span class="pill pill-skill pill-learning">PyTorch</span>
+              <span class="pill pill-skill pill-learning">MLOps</span>
+              <span class="pill pill-skill pill-learning">Spark</span>
             </div>
           </div>
         </div>
+
+        <!-- Certificações -->
+        <h3 class="subsection-title">Certificações</h3>
+        <ul class="cert-list">
+          <li class="cert-item">
+            <i data-lucide="award" class="icon-sm"></i>
+            <span><strong>Nome da certificação</strong> — Instituição · Ano</span>
+            <a href="#" target="_blank" rel="noopener" aria-label="Ver credencial"><i data-lucide="external-link" class="icon-xs"></i></a>
+          </li>
+          <li class="cert-item">
+            <i data-lucide="award" class="icon-sm"></i>
+            <span><strong>Outra certificação</strong> — Instituição · Ano</span>
+            <a href="#" target="_blank" rel="noopener" aria-label="Ver credencial"><i data-lucide="external-link" class="icon-xs"></i></a>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -200,14 +293,15 @@
     <section class="section section-alt" id="contato">
       <div class="container contact-grid">
         <div class="contact-info">
-          <span class="tag">// contato.js</span>
+          <span class="tag"># contato.py</span>
           <h2 class="section-title">Vamos conversar</h2>
-          <p>Aberto(a) a oportunidades, parcerias em projetos ou só trocar uma ideia sobre código.</p>
+          <p>Aberto(a) a oportunidades em ciência de dados, freelas de análise ou só trocar ideia sobre um problema com dados.</p>
 
           <ul class="contact-links">
             <li><a href="mailto:seuemail@exemplo.com"><i data-lucide="mail" class="icon-sm"></i> seuemail@exemplo.com</a></li>
-            <li><a href="#" target="_blank" rel="noopener"><i data-lucide="github" class="icon-sm"></i> github.com/seu-usuario</a></li>
-            <li><a href="#" target="_blank" rel="noopener"><i data-lucide="linkedin" class="icon-sm"></i> linkedin.com/in/seu-usuario</a></li>
+            <li><a href="https://github.com/seu-usuario" target="_blank" rel="noopener"><i data-lucide="github" class="icon-sm"></i> github.com/seu-usuario</a></li>
+            <li><a href="https://kaggle.com/seu-usuario" target="_blank" rel="noopener"><i data-lucide="bar-chart-3" class="icon-sm"></i> kaggle.com/seu-usuario</a></li>
+            <li><a href="https://linkedin.com/in/seu-usuario" target="_blank" rel="noopener"><i data-lucide="linkedin" class="icon-sm"></i> linkedin.com/in/seu-usuario</a></li>
           </ul>
         </div>
 
@@ -234,7 +328,7 @@
   <!-- ===================== FOOTER ===================== -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>&copy; <span id="year"></span> Seu Nome. Construído estudando HTML, CSS e JS.</p>
+      <p>&copy; <span id="year"></span> Seu Nome. Construído com HTML, CSS e JS.</p>
       <a href="#inicio" class="back-to-top" aria-label="Voltar ao topo"><i data-lucide="arrow-up" class="icon-sm"></i></a>
     </div>
   </footer>

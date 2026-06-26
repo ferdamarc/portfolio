@@ -91,7 +91,75 @@ const revealObserver = new IntersectionObserver((entries) => {
 revealTargets.forEach(el => revealObserver.observe(el));
 
 /* ============================================================
-   6. ANO DINÂMICO NO RODAPÉ
+   6. FILTRO DE PROJETOS POR CATEGORIA
+   Cada .project-card tem data-category (pode ter mais de uma, separada
+   por espaço). Os botões .filter-btn têm data-filter. Ao clicar, mostra
+   só os cartões cuja categoria bate — ou todos quando o filtro é "all".
+   ============================================================ */
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+
+filterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const filter = button.dataset.filter;
+
+    // Marca o botão ativo
+    filterButtons.forEach(b => b.classList.remove('active'));
+    button.classList.add('active');
+
+    // Mostra/esconde os cartões
+    projectCards.forEach(card => {
+      const categories = (card.dataset.category || '').split(' ');
+      const match = filter === 'all' || categories.includes(filter);
+      card.classList.toggle('is-hidden', !match);
+    });
+  });
+});
+
+/* ============================================================
+   7. CONTADORES ANIMADOS (faixa de métricas)
+   Anima de 0 até data-count quando a faixa entra na tela (uma vez).
+   Respeita prefers-reduced-motion: se ativo, mostra o número final direto.
+   ============================================================ */
+const statNumbers = document.querySelectorAll('.stat-num');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function animateCount(el) {
+  const target = Number(el.dataset.count) || 0;
+  const suffix = el.dataset.suffix || '';
+
+  if (prefersReducedMotion) {
+    el.textContent = target + suffix;
+    return;
+  }
+
+  const duration = 1200;
+  const start = performance.now();
+
+  function tick(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3); // ease-out
+    el.textContent = Math.round(eased * target) + suffix;
+    if (progress < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
+if (statNumbers.length) {
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCount(entry.target);
+        statsObserver.unobserve(entry.target); // anima só uma vez
+      }
+    });
+  }, { threshold: 0.6 });
+
+  statNumbers.forEach(el => statsObserver.observe(el));
+}
+
+/* ============================================================
+   8. ANO DINÂMICO NO RODAPÉ
    ============================================================ */
 document.getElementById('year').textContent = new Date().getFullYear();
 
