@@ -19,3 +19,7 @@ node_modules/
 # Variáveis de ambiente
 .env
 .env.local
+
+# Arquivos de referência pessoal (não versionar)
+profile.md
+projects.md
