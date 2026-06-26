@@ -13,18 +13,20 @@ if (window.lucide) {
 const navToggle = document.getElementById('navToggle');
 const nav = document.getElementById('nav');
 
-navToggle.addEventListener('click', () => {
-  const isOpen = nav.classList.toggle('is-open');
-  navToggle.setAttribute('aria-expanded', isOpen);
-});
-
-// Fecha o menu automaticamente ao clicar em um link (mobile)
-nav.querySelectorAll('.nav-link').forEach(link => {
-  link.addEventListener('click', () => {
-    nav.classList.remove('is-open');
-    navToggle.setAttribute('aria-expanded', 'false');
+if (navToggle && nav) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('is-open');
+    navToggle.setAttribute('aria-expanded', isOpen);
   });
-});
+
+  // Fecha o menu automaticamente ao clicar em um link (mobile)
+  nav.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
 
 /* ============================================================
    3. TEMA CLARO/ESCURO
@@ -43,10 +45,12 @@ const savedTheme = localStorage.getItem('theme');
 const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 applyTheme(savedTheme || (systemPrefersDark ? 'dark' : 'light'));
 
-themeToggle.addEventListener('click', () => {
-  const current = root.getAttribute('data-theme');
-  applyTheme(current === 'dark' ? 'light' : 'dark');
-});
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const current = root.getAttribute('data-theme');
+    applyTheme(current === 'dark' ? 'light' : 'dark');
+  });
+}
 
 /* ============================================================
    4. NAVEGAÇÃO ATIVA AO ROLAR A PÁGINA
@@ -161,10 +165,11 @@ if (statNumbers.length) {
 /* ============================================================
    8. ANO DINÂMICO NO RODAPÉ
    ============================================================ */
-document.getElementById('year').textContent = new Date().getFullYear();
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 /* ============================================================
-   7. FORMULÁRIO DE CONTATO
+   9. FORMULÁRIO DE CONTATO
    Feedback visual ao enviar. O envio real depende de você configurar
    um endpoint no Formspree (https://formspree.io) e colar a URL no
    atributo "action" do <form>, no index.html.
@@ -172,31 +177,33 @@ document.getElementById('year').textContent = new Date().getFullYear();
 const contactForm = document.getElementById('contactForm');
 const formFeedback = document.getElementById('formFeedback');
 
-contactForm.addEventListener('submit', async (event) => {
-  event.preventDefault();
+if (contactForm && formFeedback) {
+  contactForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
 
-  const actionUrl = contactForm.getAttribute('action');
-  if (actionUrl.includes('SEU_ID_AQUI')) {
-    formFeedback.textContent = 'Configure seu endpoint do Formspree no index.html para ativar o envio.';
-    return;
-  }
-
-  formFeedback.textContent = 'Enviando...';
-
-  try {
-    const response = await fetch(actionUrl, {
-      method: 'POST',
-      body: new FormData(contactForm),
-      headers: { Accept: 'application/json' }
-    });
-
-    if (response.ok) {
-      formFeedback.textContent = 'Mensagem enviada! Obrigado pelo contato.';
-      contactForm.reset();
-    } else {
-      formFeedback.textContent = 'Algo deu errado. Tente novamente em alguns instantes.';
+    const actionUrl = contactForm.getAttribute('action');
+    if (actionUrl.includes('SEU_ID_AQUI')) {
+      formFeedback.textContent = 'Configure seu endpoint do Formspree no index.html para ativar o envio.';
+      return;
     }
-  } catch (error) {
-    formFeedback.textContent = 'Não foi possível enviar agora. Verifique sua conexão.';
-  }
-});
+
+    formFeedback.textContent = 'Enviando...';
+
+    try {
+      const response = await fetch(actionUrl, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { Accept: 'application/json' }
+      });
+
+      if (response.ok) {
+        formFeedback.textContent = 'Mensagem enviada! Obrigado pelo contato.';
+        contactForm.reset();
+      } else {
+        formFeedback.textContent = 'Algo deu errado. Tente novamente em alguns instantes.';
+      }
+    } catch (error) {
+      formFeedback.textContent = 'Não foi possível enviar agora. Verifique sua conexão.';
+    }
+  });
+}

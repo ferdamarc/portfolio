@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Análise de Sentimentos — Fernando Daniel Marcelino</title>
+  <meta name="description" content="Estudo de caso: classificação de sentimentos em 30k avaliações de produtos em português, com F1-score de 0.88.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html#inicio" class="logo">fernando<span>.dev</span><span class="cursor">_</span></a>
+
+      <nav class="nav" id="nav">
+        <a href="../index.html#sobre" class="nav-link">Sobre</a>
+        <a href="../index.html#projetos" class="nav-link active">Projetos</a>
+        <a href="../index.html#habilidades" class="nav-link">Habilidades</a>
+        <a href="../index.html#contato" class="nav-link">Contato</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema claro/escuro">
+          <i data-lucide="sun" class="icon icon-sun"></i>
+          <i data-lucide="moon" class="icon icon-moon"></i>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+          <i data-lucide="menu" class="icon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== HERO DO PROJETO ===================== -->
+    <section class="detail-hero">
+      <div class="container">
+        <a href="../index.html#projetos" class="breadcrumb"><i data-lucide="arrow-left" class="icon-sm"></i> Voltar para projetos</a>
+        <span class="tag"># nlp</span>
+        <h1 class="detail-title">Análise de Sentimentos</h1>
+        <p class="detail-summary">
+          Pipeline de NLP que classifica avaliações de produtos em positivas ou negativas,
+          a partir de texto em português coletado por web scraping.
+        </p>
+
+        <div class="project-metrics" style="margin-top:18px">
+          <span class="metric-badge"><i data-lucide="target" class="icon-xs"></i> F1 0.88</span>
+          <span class="metric-badge"><i data-lucide="database" class="icon-xs"></i> 30k reviews</span>
+          <span class="metric-badge metric-warm">Pipeline reutilizável</span>
+        </div>
+
+        <div class="detail-actions">
+          <a href="#" target="_blank" rel="noopener" class="btn btn-primary"><i data-lucide="github" class="icon-sm"></i> Ver código</a>
+          <a href="#" target="_blank" rel="noopener" class="btn btn-ghost"><i data-lucide="book-open" class="icon-sm"></i> Abrir notebook</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CORPO DO ESTUDO DE CASO ===================== -->
+    <section class="container detail-layout">
+      <div class="detail-content">
+
+        <div class="detail-block">
+          <h2>O problema</h2>
+          <p>
+            Avaliações de clientes carregam informação valiosa, mas lê-las uma a uma não escala.
+            O objetivo foi classificar automaticamente o sentimento de cada review, para
+            acompanhar a satisfação em volume e identificar problemas recorrentes.
+          </p>
+        </div>
+
+        <div class="detail-block">
+          <h2>Os dados</h2>
+          <p>
+            Cerca de 30 mil avaliações de produtos em português, coletadas por web scraping,
+            com texto livre e a nota dada pelo cliente.
+          </p>
+          <ul class="detail-bullets">
+            <li>Coleta automatizada e armazenamento estruturado dos reviews.</li>
+            <li>Rotulagem de sentimento a partir da nota (positivo/negativo).</li>
+            <li>Inspeção da distribuição das classes e do tamanho dos textos.</li>
+          </ul>
+        </div>
+
+        <div class="detail-block">
+          <h2>O método</h2>
+          <ul class="detail-bullets">
+            <li><strong>Pré-processamento:</strong> normalização, remoção de stopwords e tokenização.</li>
+            <li><strong>Vetorização:</strong> representação dos textos com TF-IDF.</li>
+            <li><strong>Modelagem:</strong> classificador treinado e ajustado para o português.</li>
+            <li><strong>Avaliação:</strong> matriz de confusão e F1-score por classe.</li>
+          </ul>
+        </div>
+
+        <div class="detail-block">
+          <h2>Os resultados</h2>
+          <div class="result-grid">
+            <div class="result-card"><span class="result-num">0.88</span><span class="result-label">F1-score</span></div>
+            <div class="result-card"><span class="result-num">30k</span><span class="result-label">Reviews</span></div>
+            <div class="result-card"><span class="result-num">2</span><span class="result-label">Classes</span></div>
+          </div>
+          <p style="margin-top:14px">
+            O modelo alcançou F1-score de 0.88 e o pipeline ficou modular — pronto para ser
+            reaproveitado em novos conjuntos de avaliações sem reescrever o pré-processamento.
+          </p>
+        </div>
+
+        <div class="detail-block">
+          <h2>Aprendizados</h2>
+          <p>
+            Em NLP em português, o pré-processamento faz quase todo o trabalho pesado: tratar
+            acentuação, gírias e negações teve mais impacto no resultado do que trocar o
+            algoritmo de classificação.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Ficha técnica -->
+      <aside class="detail-aside">
+        <h3>Categoria</h3>
+        <p>NLP · Classificação de Texto</p>
+        <h3>Stack</h3>
+        <p>Python, NLTK, spaCy, scikit-learn</p>
+        <h3>Dados</h3>
+        <p>~30k reviews · web scraping</p>
+        <h3>Período</h3>
+        <p>Projeto pessoal · 2025</p>
+        <h3>Links</h3>
+        <p>
+          <a href="#" target="_blank" rel="noopener" style="color:var(--accent)">Repositório no GitHub</a><br>
+          <a href="#" target="_blank" rel="noopener" style="color:var(--accent)">Notebook completo</a>
+        </p>
+      </aside>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Fernando Daniel Marcelino.</p>
+      <a href="../index.html#inicio" class="back-to-top" aria-label="Voltar ao topo"><i data-lucide="arrow-up" class="icon-sm"></i></a>
+    </div>
+  </footer>
+
+  <script src="../js/script.js" defer></script>
+</body>
+</html>
